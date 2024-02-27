@@ -1,8 +1,12 @@
+let apiKey = "844654189a6b05c47cf0b6daac44";
+let hindiApi =
+  "https://hindi-jokes-api.onrender.com/jokes?api_key=844654189a6b05c47cf0b6daac44";
 let url = "https://icanhazdadjoke.com/slack";
-fetch(url)
+fetch(hindiApi)
   .then((data) => data.json())
   .then((jokeData) => {
-    const jokeText = jokeData.attachments[0].text;
+    // const jokeText = jokeData.attachments[0].text;
+    const jokeText = jokeData.jokeContent;
     const jokeElement = document.getElementById("jokeElement");
     jokeElement.innerHTML = jokeText;
     setBgColor();
